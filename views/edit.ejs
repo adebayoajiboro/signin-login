@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/edittodo/<%= index %>" method="post">
+        <h1>Edit</h1>
+        <input value="<%= onetodo.title %>" required name="title" type="text" placeholder="Title">
+        <input value="<%= onetodo.content %> "required name="content" type="text" placeholder="Content">
+        <button type="submit">Edittodo</button>
+    </form>
+</body>
+</html>

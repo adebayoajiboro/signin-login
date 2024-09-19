@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/todo" method="post">
+        <input required name="title" type="text" placeholder="Title">
+        <input required name="content" type="text" placeholder="Content">
+        <button type="submit">Addtodo</button>
+    </form>
+
+
+
+        <% todoarray.forEach((element, index)=> { %>
+            <p>Name:<%= element.title %></p>
+            <p>Food:<%= element.content %></p>
+
+
+            <form action="/delete" method="post">
+                <input name="index" value="<%= index %>" type="text" hidden>
+                <button type="submit">Delete</button>
+            </form>
+
+            <form action="/edit/<%= index %>" method="get">
+                <button>Edit</button>
+            </form>
+
+        <% }) %>
+
+
+
+
+   
+
+
+    
+</body>
+
+</html>
