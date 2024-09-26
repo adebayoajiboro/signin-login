@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/edittodo/<%= index %>" method="post">
+    <form action="/edittodo/<%= getedit._id %>" method="post">
         <h1>Edit</h1>
-        <input value="<%= onetodo.title %>" required name="title" type="text" placeholder="Title">
-        <input value="<%= onetodo.content %> "required name="content" type="text" placeholder="Content">
+        <input value="<%= getedit.title %>" required name="title" type="text" placeholder="Title">
+        <input value="<%= getedit.content %> "required name="content" type="text" placeholder="Content">
         <button type="submit">Edittodo</button>
     </form>
 </body>

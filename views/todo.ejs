@@ -9,24 +9,24 @@
 
 <body>
     <form action="/todo" method="post">
-        <input required name="title" type="text" placeholder="Title">
-        <input required name="content" type="text" placeholder="Content">
+        <input name="title" type="text" placeholder="Title">
+        <input name="content" type="text" placeholder="Content">
         <button type="submit">Addtodo</button>
     </form>
 
 
 
-        <% todoarray.forEach((element, index)=> { %>
+        <% alltodo.forEach((element, index)=> { %>
             <p>Name:<%= element.title %></p>
             <p>Food:<%= element.content %></p>
 
 
             <form action="/delete" method="post">
-                <input name="index" value="<%= index %>" type="text" hidden>
-                <button type="submit">Delete</button>
+                <input name="id" value="<%= element._id %>" type="text" hidden>
+                <button>Delete</button>
             </form>
 
-            <form action="/edit/<%= index %>" method="get">
+            <form action="/edit/<%= element._id %>" method="get">
                 <button>Edit</button>
             </form>
 

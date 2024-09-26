@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoppify</title>
+</head>
+
+<body>
+    <form action="/submit" method="post">
+        <input name="item" type="text" placeholder="item">
+        <input name="quantity" type="text" placeholder="quantity" oninput="addamount()" id="quantity">
+        <input name="price" type="text" placeholder="price" id="price" oninput="addamount2()">
+        <input name="amount" type="text" placeholder="Total" id="amount">
+        <button type="submit">Add Item</button>
+    </form>
+
+    <% okay.forEach((element, index)=> { %>
+        <p>Name:<%= element.item %></p>
+        <p>Quantity:<%= element.quantity %></p>
+        <p>Price:<%= element.price %></p>
+        <p>Amount:<%= element.amount %></p>
+
+        <form action="/deleteShoping" method="post">
+            <input name="id" value="<%= element._id %>" type="text" hidden>
+            <button>Delete</button>
+        </form>
+
+    <% }) %>
+
+    
+</body>
+
+</html>
+
+<script>
+    let amount = document.getElementById('amount')
+    let quantity = document.getElementById('quantity')
+    let price = document.getElementById('price')
+    function addamount() {
+        amount.value = parseInt(quantity.value) * parseInt(price.value)
+    }
+    function addamount2() {
+        amount.value = parseInt(quantity.value) * parseInt(price.value)
+    }
+</script>
